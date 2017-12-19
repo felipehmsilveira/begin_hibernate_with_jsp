@@ -1,10 +1,12 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -17,73 +19,50 @@ import org.hibernate.annotations.Cascade;
 public class Pedido {
 	
 	public Pedido(){
-		setStatus(false);
+		this.produtos = new ArrayList<Produto>();
 	}
 	
 	@Id
+	@GeneratedValue
 	private Integer id;
+	private String iniciodopedido;
+	private String fechamentodopedido;
 	
-	@ManyToOne
-	private Cliente cliente;
-	
-	@Temporal(TemporalType.DATE)
-	private Date data;
-	
-	@ManyToMany
-	//@Cascade(CascadeType.ALL)
-	private List<Produto> produto;
-	
-	private Double valorTotal;
-	
-	private boolean status;
-	
-	public boolean getStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	@ManyToMany
+	private List<Produto> produtos;
 	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
+	@ManyToOne
+	private Cliente cliente;
+	
+	public String getIniciodopedido() {
+		return iniciodopedido;
+	}
+	public void setIniciodopedido(String iniciodopedido) {
+		this.iniciodopedido = iniciodopedido;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
-
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
-	public Date getData() {
-		return data;
+	public String getFechamentodopedido() {
+		return fechamentodopedido;
 	}
-
-	public void setData(Date data) {
-		this.data = data;
+	public void setFechamentodopedido(String fechamentodopedido) {
+		this.fechamentodopedido = fechamentodopedido;
 	}
-
-	public Double getValorTotal() {
-		return valorTotal;
-	}
-
-	public void setValorTotal(Double valorTotal) {
-		this.valorTotal = valorTotal;
-	}	
-	
-	public List<Produto> getProduto() {
-		return produto;
-	}
-	
-	public void setProduto(List<Produto> produto) {
-		this.produto = produto;
-	}
-	
 }

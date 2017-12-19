@@ -39,7 +39,7 @@ public class cadastroCliente extends HttpServlet {
 		String cidade = request.getParameter("cidade");
 		String numero = request.getParameter("numero");
 		
-		c.setCpf_cnpj(cpf.trim());
+		/*c.setCpf_cnpj(cpf.trim());
 		c.setNome(nome.trim());
 		
 		if(sexo.equals("1"))
@@ -75,6 +75,6 @@ public class cadastroCliente extends HttpServlet {
 			request.setAttribute("exception", msg);
 			e.printStackTrace();
 			request.getRequestDispatcher("/error.jsp").forward(request, response);	
-		}
+		}*/
 	}
 }

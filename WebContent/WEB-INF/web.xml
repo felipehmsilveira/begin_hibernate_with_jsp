@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns="http://java.sun.com/xml/ns/javaee" 
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
-    id="WebApp_ID" version="2.5">
-
-    <display-name>Fenix</display-name>
-    
-    <error-page>
-        <exception-type>java.lang.Exception</exception-type>
-        <location>/error.jsp</location>
-    </error-page>
-
-    <welcome-file-list>
-      <welcome-file>index.jsp</welcome-file>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>RestauranteFelipeMonteiro</display-name>
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>cadastroCliente</servlet-name>
     <servlet-class>
         servlets.cadastroCliente
     </servlet-class>
   </servlet>
-
-<servlet-mapping>
+  <servlet-mapping>
     <servlet-name>cadastroCliente</servlet-name>
     <url-pattern>/cadastroCliente</url-pattern>
-</servlet-mapping>
-
+  </servlet-mapping>
 </web-app>
-

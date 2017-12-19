@@ -1,34 +1,61 @@
 package classes;
 
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-
-
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-public class Cliente extends Pessoa  {
+public class Cliente {
 	
-	@Column(nullable = false)
-	private String cpf_cnpj;
-	private String tipo;
-		
-	public String getTipo() {
-		return tipo;
+	@Id
+	@GeneratedValue
+	private Integer id;
+	private String nome;
+	private String email;
+	private String datadenascimento;
+	private String paginanofacebook;
+	private String usuariodotwitter;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getCpf_cnpj() {
-		return cpf_cnpj;
+	
+	public String getNome() {
+		return nome;
 	}
-	public void setCpf_cnpj(String cpf_cnpj) {
-		this.cpf_cnpj = cpf_cnpj;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getDatadenascimento() {
+		return datadenascimento;
+	}
+	public void setDatadenascimento(String datadenascimento) {
+		this.datadenascimento = datadenascimento;
+	}
+	public String getPaginanofacebook() {
+		return paginanofacebook;
+	}
+	public void setPaginanofacebook(String paginanofacebook) {
+		this.paginanofacebook = paginanofacebook;
+	}
+	public String getUsuariodotwitter() {
+		return usuariodotwitter;
+	}
+	public void setUsuariodotwitter(String usuariodotwitter) {
+		this.usuariodotwitter = usuariodotwitter;
+	}
+	
 
-	
-	
 	
 }
  
